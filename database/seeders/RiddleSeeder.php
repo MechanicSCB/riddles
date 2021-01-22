@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Riddle;
 use Illuminate\Database\Seeder;
 
 class RiddleSeeder extends Seeder
@@ -13,6 +14,8 @@ class RiddleSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Riddle::factory()
+            ->count(20)
+            ->create();
     }
 }
