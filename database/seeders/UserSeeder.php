@@ -15,12 +15,6 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-//        DB::table('users')->insert([
-//            'name' => 'user001',
-//            'email' => 'user001@example.com',
-//            'password' => Hash::make('user001@example.com'),
-//        ]);
-
         clearDbTable('users');
 
         $users = [];
