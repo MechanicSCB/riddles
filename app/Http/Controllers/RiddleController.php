@@ -13,4 +13,10 @@ class RiddleController extends Controller
 
         return view('riddles.index', compact('riddles'));
     }
+
+    public function show(Riddle $riddle)
+    {
+        return view('riddles.show', compact('riddle'));
+    }
+
 }

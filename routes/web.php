@@ -21,3 +21,4 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::get('/riddles', [\App\Http\Controllers\RiddleController::class, 'index'])->name('riddles.index');
+Route::get('/riddles/{riddle}', [\App\Http\Controllers\RiddleController::class, 'show'])->name('riddles.show');
