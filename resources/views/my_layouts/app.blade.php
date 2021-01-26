@@ -77,6 +77,23 @@
     </nav>
 
     <div class="section">
+        <div>
+            @if(session('success'))
+                <div class="alert alert-success" style="margin: 0; padding: 5px">
+                    {{ session('success') }}
+                </div>
+            @endif
+            @if(session('warning'))
+                <div class="alert alert-warning" style="margin: 0; padding: 5px">
+                    {{ session('warning') }}
+                </div>
+            @endif
+            @if(session('danger'))
+                <div class="alert alert-danger" style="margin: 0; padding: 5px">
+                    {{ session('danger') }}
+                </div>
+            @endif
+        </div>
         <main class="container mx-auto py-4">
             @yield('content')
         </main>

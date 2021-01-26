@@ -23,9 +23,9 @@ class RiddleSeeder extends Seeder
             [28, 51],
         ];
         $output = [
-            334,
-            846,
-            12,
+            "334",
+            "846",
+            "12",
         ];
 
         $riddles[] = [

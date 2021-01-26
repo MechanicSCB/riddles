@@ -38,14 +38,14 @@
                     </div>
                     <div class="lg:w-3/4 px-3 mb-6">
                         <h3>Output</h3>
-                        <form method="POST" action="#">
+                        <form method="POST" action="{{ route('riddles.check', [$riddle->id]) }}">
                             @csrf
-                            @method('PATCH')
+{{--                            @method('PATCH')--}}
                             <textarea
                                 class="card w-full mb-4"
                                 style="min-height: 200px"
                                 placeholder="Anything special tht you want to make a note of?"
-                                name="notes"
+                                name="output"
                             ></textarea>
 
                             <button type="submit" class="button">Save</button>
