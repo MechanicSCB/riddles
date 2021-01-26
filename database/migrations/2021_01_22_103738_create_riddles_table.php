@@ -21,8 +21,9 @@ class CreateRiddlesTable extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('set null');
             $table->string('title');
-            $table->text('description');
-            $table->text('solution');
+            $table->text('body');
+            $table->json('input');
+            $table->text('output');
             $table->unsignedTinyInteger('difficulty')->default(0);
             $table->timestamps();
         });
