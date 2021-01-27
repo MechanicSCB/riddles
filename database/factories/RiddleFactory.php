@@ -23,9 +23,10 @@ class RiddleFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence,
-            'description' => $this->faker->text,
-            'solution' => $this->faker->text,
+            'body' => $this->faker->text,
             'difficulty' => rand(0, 8),
+            'input' => $this->faker->sentence,
+            'output' => $this->faker->sentence,
         ];
     }
 }

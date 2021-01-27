@@ -27,24 +27,24 @@
             <div class="lg:w-3/4 px-3 mb-6">
                 <div class="mb-8">
                     <h2 class="text-lg text-default font-normal mb-3">Riddle</h2>
-                    @include('riddles.card')
+                    @include('riddles.card', ['limit' => false])
                 </div>
                 <div class="lg:flex -mx-3">
                     <div class="lg:w-1/4 px-3 mb-6">
                         <h3>input</h3>
+                        <br>
                         @foreach(json_decode($riddle->input) as $input)
-                            <p>{{ implode(', ', $input) }}</p>
+                            <p>{{  is_array($input) ? implode(', ', $input) : $input }}</p>
                         @endforeach
                     </div>
                     <div class="lg:w-3/4 px-3 mb-6">
                         <h3>Output</h3>
                         <form method="POST" action="{{ route('riddles.check', [$riddle->id]) }}">
                             @csrf
-{{--                            @method('PATCH')--}}
                             <textarea
                                 class="card w-full mb-4"
                                 style="min-height: 200px"
-                                placeholder="Anything special tht you want to make a note of?"
+                                placeholder="Type or paste here returns of your function..."
                                 name="output"
                             ></textarea>
 

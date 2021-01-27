@@ -16,7 +16,7 @@ class ShowRiddleTest extends TestCase
     {
         $riddle = Riddle::factory()->create();
 
-        $this->get('/')
+        $this->get('/riddles')
             ->assertSee($riddle->title);
     }
 }
