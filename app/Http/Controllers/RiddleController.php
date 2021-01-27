@@ -19,6 +19,11 @@ class RiddleController extends Controller
         return view('riddles.show', compact('riddle'));
     }
 
+    public function create()
+    {
+        return view('riddles.create');
+    }
+
     public function check(Request $request, Riddle $riddle)
     {
         $output = explode("\r\n",  $request['output']);

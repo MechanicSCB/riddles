@@ -7,7 +7,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class ShowRiddleTest extends TestCase
+class RiddlesTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -19,4 +19,17 @@ class ShowRiddleTest extends TestCase
         $this->get('/riddles')
             ->assertSee($riddle->title);
     }
+
+    /** @test */
+    public function a_user_can_create_riddles()
+    {
+        $this->withoutExceptionHandling();
+
+        $this->signIn();
+
+        $this->assertAuthenticated();
+
+        $this->get('/riddles/create')->assertStatus(200);
+    }
+
 }

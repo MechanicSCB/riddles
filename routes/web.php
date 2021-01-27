@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\RiddleController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +22,20 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/riddles', [\App\Http\Controllers\RiddleController::class, 'index'])->name('riddles.index');
-Route::get('/riddles/{riddle}', [\App\Http\Controllers\RiddleController::class, 'show'])->name('riddles.show');
-Route::post('/riddles/{riddle}', [\App\Http\Controllers\RiddleController::class, 'check'])->name('riddles.check');
+Route::get('/riddles', [RiddleController::class, 'index'])->name('riddles.index');
+Route::get('/riddles/create', [RiddleController::class, 'create'])->name('riddles.create');
+Route::post('/riddles/', [RiddleController::class, 'store'])->name('riddles.store');
+Route::get('/riddles/{riddle}', [RiddleController::class, 'show'])->name('riddles.show');
+
+Route::post('/riddles/{riddle}', [RiddleController::class, 'check'])->name('riddles.check');
+
+
+// очистка кэша
+Route::get('/clear', function() {
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    Artisan::call('view:clear');
+    Artisan::call('route:clear');
+//    Artisan::call('backup:clean');
+    return back();
+});

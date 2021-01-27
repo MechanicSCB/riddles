@@ -1,11 +1,7 @@
 @extends('my_layouts.app')
 
 @section('content')
-    @php
-        /**
-         * @var $riddle App\riddle
-         */
-    @endphp
+    @php /** * @var $riddle App\Models\Riddle */ @endphp
 
     <header class="flex items-center mb-3 py-4">
         <div class="flex justify-between items-end w-full">
