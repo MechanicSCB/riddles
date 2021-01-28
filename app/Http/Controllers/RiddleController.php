@@ -44,6 +44,14 @@ class RiddleController extends Controller
         return redirect()->route('riddles.index');
     }
 
+    public function destroy(Riddle $riddle)
+    {
+//        dd(__METHOD__, $riddle);
+        $riddle->delete();
+
+        return redirect()->route('riddles.index');
+    }
+
     public function check(Request $request, Riddle $riddle)
     {
         $output = explode("\r\n",  $request['output']);

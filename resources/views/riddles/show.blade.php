@@ -12,6 +12,12 @@
 
             <div class="flex items-center">
                 <a href="{{ route('riddles.edit', $riddle) }}" class="button">Edit Riddle</a>
+                <form method="POST"  action="{{ route('riddles.destroy', $riddle) }}">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">Delete</button>
+                </form>
+
 
                 <theme-switcher></theme-switcher>
             </div>

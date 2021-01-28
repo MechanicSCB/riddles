@@ -28,6 +28,7 @@ Route::post('/riddles/', [RiddleController::class, 'store'])->name('riddles.stor
 Route::get('/riddles/{riddle}/edit', [RiddleController::class, 'edit'])->name('riddles.edit');
 Route::patch('/riddles/{riddle}', [RiddleController::class, 'update'])->name('riddles.update');
 Route::get('/riddles/{riddle}', [RiddleController::class, 'show'])->name('riddles.show');
+Route::delete('/riddles/{riddle}', [RiddleController::class, 'destroy'])->name('riddles.destroy');
 
 Route::post('/riddles/{riddle}', [RiddleController::class, 'check'])->name('riddles.check');
 
