@@ -21,7 +21,6 @@
                 No riddles yet.
             </div>
         @endforelse
-
     </main>
 
     <new-project-modal></new-project-modal>

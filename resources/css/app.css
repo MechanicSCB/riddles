@@ -1,3 +1,15 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+.card {
+    background-color: #fff;
+    padding: 1.25rem;
+    border-radius: .5rem;
+    box-shadow: 0 0px 5px 0 rgba(0, 0, 0, .08);
+}
+
+body,
+button {
+    color: #222;
+}

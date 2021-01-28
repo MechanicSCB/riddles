@@ -20,9 +20,10 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body class="theme-light bg-page">
+{{--<body class="theme-light bg-page">--}}
+<body class="bg-gray-100">
 <div id="app">
-    <nav class="bg-header section">
+    <nav class="bg-header section bg-white">
         <div class="container mx-auto">
             <div class="flex justify-between items-center py-1">
                 <h1>

@@ -24,6 +24,15 @@ class RiddleController extends Controller
         return view('riddles.create');
     }
 
+    public function store(Request $request)
+    {
+//        dd(__METHOD__, $request->all());
+
+        Riddle::create($request->all());
+
+        return redirect()->route('riddles.index');
+    }
+
     public function check(Request $request, Riddle $riddle)
     {
         $output = explode("\r\n",  $request['output']);

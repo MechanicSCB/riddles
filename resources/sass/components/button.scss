@@ -1,0 +1,17 @@
+.button{
+    @apply .bg-button .no-underline .rounded-lg .text-sm .py-2 .px-5;
+    color: white;
+
+    &.is-outlined {
+        @apply .bg-card .border .border-accent .text-accent;
+    }
+
+    .theme-light & {
+        box-shadow: 0px 2px 7px 0px #b0eaff;
+    }
+
+    .theme-dark & {
+        box-shadow: 0px 2px 7px 0px #00658b;
+    }
+
+}
