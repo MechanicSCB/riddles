@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RiddleRequest;
 use App\Models\Riddle;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,7 @@ class RiddleController extends Controller
         return view('riddles.create');
     }
 
-    public function store(Request $request)
+    public function store(RiddleRequest $request)
     {
         Riddle::create($request->all());
 
@@ -36,7 +37,7 @@ class RiddleController extends Controller
         return view('riddles.edit', compact('riddle'));
     }
 
-    public function update(Request $request, Riddle $riddle)
+    public function update(RiddleRequest $request, Riddle $riddle)
     {
         $riddle->update($request->all());
 
