@@ -9,10 +9,11 @@
                 <a href="/riddles" class="text-default text-sm font-normal no-underline">My riddles</a>
                 / {{ $riddle->title }}
             </p>
-            <!-- Invited Users -->
-            <div class="flex items-center">
-                <theme-switcher></theme-switcher>
 
+            <div class="flex items-center">
+                <a href="{{ route('riddles.edit', $riddle) }}" class="button">Edit Riddle</a>
+
+                <theme-switcher></theme-switcher>
             </div>
 
         </div>
@@ -54,6 +55,7 @@
             </div>
 
             <div class="lg:w-1/4 px-3 lg:py-8">
+
                 @include('riddles.card')
             </div>
         </div>

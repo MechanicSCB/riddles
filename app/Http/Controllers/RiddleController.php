@@ -26,9 +26,19 @@ class RiddleController extends Controller
 
     public function store(Request $request)
     {
-//        dd(__METHOD__, $request->all());
-
         Riddle::create($request->all());
+
+        return redirect()->route('riddles.index');
+    }
+
+    public function edit(Riddle $riddle)
+    {
+        return view('riddles.edit', compact('riddle'));
+    }
+
+    public function update(Request $request, Riddle $riddle)
+    {
+        $riddle->update($request->all());
 
         return redirect()->route('riddles.index');
     }
@@ -37,7 +47,6 @@ class RiddleController extends Controller
     {
         $output = explode("\r\n",  $request['output']);
 
-//        dd($request['output'], $output, json_decode( $riddle->output));
         if($output === json_decode( $riddle->output)){
             return back()->with('success', 'OK');
             dd(__METHOD__, 'OK');
@@ -45,9 +54,6 @@ class RiddleController extends Controller
             return back()->with('danger', 'Wrong');
             dd(__METHOD__, 'WRONG');
         }
-
-
-//        return view('riddles.show', compact('riddle'));
     }
 
 }

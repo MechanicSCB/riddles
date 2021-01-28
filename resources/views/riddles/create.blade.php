@@ -3,7 +3,6 @@
 @section('content')
     @php /** * @var $riddle App\Models\Riddle */ @endphp
 
-
     <form method="POST" action="{{ route('riddles.store') }}">
         @csrf
         <div>
