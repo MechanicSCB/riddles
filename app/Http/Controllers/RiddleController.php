@@ -27,9 +27,12 @@ class RiddleController extends Controller
 
     public function store(RiddleRequest $request)
     {
-        Riddle::create($request->all());
+        $request = $request->validated();
+//        $request['input'] = json_encode([$request['input']]);
+//        $request['output'] = json_encode([$request['output']]);
+        Riddle::create($request);
 
-        return redirect()->route('riddles.index');
+        return redirect()->route('riddles.index')->with('success', 'Riddle Successfully Created');
     }
 
     public function edit(Riddle $riddle)
@@ -41,15 +44,15 @@ class RiddleController extends Controller
     {
         $riddle->update($request->all());
 
-        return redirect()->route('riddles.index');
+        return back();
+//        return redirect()->route('riddles.index');
     }
 
     public function destroy(Riddle $riddle)
     {
-//        dd(__METHOD__, $riddle);
         $riddle->delete();
 
-        return redirect()->route('riddles.index');
+        return redirect()->route('riddles.index')->with('danger', 'Riddle Successfully Deleted');
     }
 
     public function check(Request $request, Riddle $riddle)

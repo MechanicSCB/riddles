@@ -24,7 +24,11 @@ class RiddleRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required',
+            'body' => 'required',
+            'difficulty' => 'integer|nullable',
+            'input' => 'required',
+            'output' => 'required',
         ];
     }
 }

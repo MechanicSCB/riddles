@@ -24,7 +24,7 @@ class CreateRiddlesTable extends Migration
             $table->text('body');
             $table->json('input');
             $table->text('output');
-            $table->unsignedTinyInteger('difficulty')->default(0);
+            $table->unsignedTinyInteger('difficulty')->default(0)->nullable();
             $table->timestamps();
         });
     }
