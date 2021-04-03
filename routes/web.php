@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\RiddleController;
+use App\Jobs\ReconcileAccount;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -14,7 +16,20 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::view('/','welcome');
+
+Route::get('/', [MainController::class,'index']);
+
+//Route::get('/', function () {
+//    $user = \App\Models\User::first();
+//
+//    //dispatch(new ReconcileAccount($user));
+//    ReconcileAccount::dispatch($user);
+//
+//    return 'Finished';
+//});
+//
+
+//Route::view('/','welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
